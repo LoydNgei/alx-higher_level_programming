@@ -105,4 +105,3 @@ class Rectangle:
             size (int): The width and height of the new rectangle
             """
         return (cls(size, size))
-
