@@ -3,9 +3,15 @@
 
 
 class Rectangle:
-    """Represents class Rectangle"""
+    """Represents class Rectangle
+    number_of_instances (int): The number of Rectangle instances.
+    """
+
+    number_of_instances = 0
+
     def __init__(self, width=0, height=0):
         """Initialization of the class Rectangle"""
+        type(self).number_of_instances += 1
         self.width = width
         self.height = height
 
@@ -68,5 +74,6 @@ class Rectangle:
         return (rect)
 
     def __del__(self):
-        """Return message when instance of Rectangle is deleted"""
+        """Return a message when an instance of Rectangle is deleted"""
+        type(self).number_of_instances -= 1
         print("Bye rectangle...")
