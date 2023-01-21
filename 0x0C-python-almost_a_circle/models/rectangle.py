@@ -5,6 +5,7 @@ from models.base import Base
 
 class Rectangle(Base):
     """Representation of class Rectangle"""
+
     def __init__(self, width, height, x=0, y=0, id=None):
         """Initialization of the class Rectangle
 
@@ -50,7 +51,7 @@ class Rectangle(Base):
         """Set the height"""
         if type(value) != int:
             raise TypeError("height must be an integer")
-        if (height <= 0):
+        if (value <= 0):
             raise ValueError("height must be > 0")
         self.__height = value
 
@@ -64,7 +65,7 @@ class Rectangle(Base):
         """Set x coordinate"""
         if type(value) != int:
             raise TypeError("x must be an integer")
-        if (x < 0):
+        if (value < 0):
             raise ValueError("x must be >= 0")
         self.__x = value
 
@@ -78,7 +79,7 @@ class Rectangle(Base):
         """Set the y coordinate"""
         if type(value) != int:
             raise TypeError("y must be an integer")
-        if (y < 0):
+        if (value < 0):
             raise ValueError("y must be >= 0")
         self.__y = value
 
