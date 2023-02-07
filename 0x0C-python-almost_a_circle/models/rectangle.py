@@ -89,10 +89,24 @@ class Rectangle(Base):
 
     def display(self):
         """Returns in stdout the rectangle instance with the character #"""
-        for i in range(self.height):
-            print("#" * self.width)
+        for emptyline in range(self.__y):
+            print('')
+        for newline in range(self.__height):
+            for space in range(self.__x):
+                print(' ', end='')
+            for symbol in range(self.__width):
+                print("#", end="")
+            print('')
 
-    def update(self, *args):
+    def __str__(self):
+        """Overrides __str__ method to return [Rectangle] (<id>)
+            <x>/<y> - <width>/<height>
+        """
+        return "[Rectangle] ({}) {}/{} - {}/{}".format(self.id,
+                                                       self.x, self.y,
+                                                       self.width, self.height)
+
+    def update(self, *args, **kwargs):
         """Assigns an argument to each attribute
 
         Args:
@@ -141,14 +155,9 @@ class Rectangle(Base):
     def to_dictionary(self):
         """Returns the dictionary representation of a Rectangle"""
         return {
-                "id": self.id,
-                "width": self.width,
-                "height": self.height,
-                "x": self.x,
-                "y": self.y
-                }
-
-    def __str__(self):
-        """Override the class Rectangle"""
-        return ("[Rectangle] ({}) {}/{} - {}/{}" /
-                .format(self.id, self.x, self.y, self.width, self.height))
+            "id": self.id,
+            "width": self.width,
+            "height": self.height,
+            "x": self.x,
+            "y": self.y
+        }
