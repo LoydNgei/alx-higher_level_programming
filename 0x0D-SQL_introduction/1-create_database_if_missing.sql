@@ -1,0 +1,2 @@
+-- A script
+CREATE DATABASE
