@@ -1,2 +1,2 @@
 -- A script that lists all record of table
-SHOW * second_table;
+SELECT score, name FROM second_table ORDER BY score DESC;
