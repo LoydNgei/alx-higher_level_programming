@@ -16,7 +16,7 @@ if __name__ == '__main__':
             )
     mycursor = mydb.cursor()
 
-    mycursor.execute("SELECT * FROM states BY ORDER states_id")
+    mycursor.execute("SELECT * FROM states")
 
     rows_inside = mycursor.fetchall()
 
