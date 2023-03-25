@@ -10,7 +10,6 @@ from sqlalchemy.orm import sessionmaker
 import sys
 from sqlalchemy import create_engine, join
 
-
 if __name__ == "__main__":
     engine = create_engine(
             'mysql+mysqldb://{}:{}@localhost:3306/{}'
@@ -21,6 +20,6 @@ if __name__ == "__main__":
     session = Session()
 
     states = session.query(State, City).join(State).all()
-    for State, City in states:
+    for state, city in states:
         print(f"{state.name}: ({city.id}) {city.name}")
     session.close()
