@@ -4,6 +4,7 @@
 from sqlalchemy import Sequence, Column, Integer, String, ForeignKey
 from model_state import Base, State
 
+
 class City(Base):
     """State object """
     __tablename__ = 'cities'
