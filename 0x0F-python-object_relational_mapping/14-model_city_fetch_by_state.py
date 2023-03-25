@@ -1,9 +1,8 @@
 #!/usr/bin/python3
 
-import sys
-from sqlalchemy.orm import sessionmaker
-from sqlalchemy import create_engine
-from model_state import Base, State
+"""
+script that prints all City objects from the database hbtn_0e_14_usa
+"""
 
 if __name__ == "__main__":
     engine = create_engine(
