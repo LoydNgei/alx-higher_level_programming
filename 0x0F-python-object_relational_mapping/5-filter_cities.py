@@ -19,12 +19,12 @@ if __name__ == '__main__':
 
     mycursor = mydb.cursor()
 
-    mycursor.execute("SELECT cities.id, cities.name FROM cities \
-            JOIN states ON cities.state_id WHERE \
-            states.name LIKE BINARY %(state_name)s \
-            ORDER BY cities.id ASC", sys.argv[4])
-
+    mycursor.execute("SELECT cities.name FROM cities\
+            INNER JOIN states ON cities.state_id = states.id\
+            WHERE states.name %s\
+            ORDER BY cities.id", (sys.argv[4], ))
     rows_selected = mycursor.fetchall()
+    print(", ".join([row[0] for row in rows_selected]))
 
-    if rows_selected is not None:
-        print(", ".join([row[1] for row in rows_selected]))
+    mycursor.close()
+    mydb.close()
