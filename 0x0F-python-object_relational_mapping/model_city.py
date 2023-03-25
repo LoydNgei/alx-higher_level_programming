@@ -1,7 +1,6 @@
 #!/usr/bin/python3
 
 """Contains the class definition of a city"""
-
 from sqlalchemy import Sequence, Column, Integer, String, ForeignKey
 from model_state import Base, State
 
