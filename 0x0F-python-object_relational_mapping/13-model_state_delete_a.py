@@ -25,4 +25,3 @@ if __name__ == "__main__":
         session.delete(State)
     session.commit()
     session.close()
-
