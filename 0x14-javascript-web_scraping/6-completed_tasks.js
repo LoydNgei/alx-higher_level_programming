@@ -9,15 +9,15 @@ request.get(url, { json: true }, (error, response, body) => {
     return;
   }
 
-  const tasks_Completed = {};
+  const tasks = {};
   body.forEach((todo) => {
     if (todo.completed) {
-      if (!tasks_Completed[todo.userId]) {
-        tasks_Completed[todo.userId] = 1;
+      if (!tasks[todo.userId]) {
+        tasks[todo.userId] = 1;
       } else {
-        tasks_Completed[todo.userId] += 1;
+        tasks[todo.userId] += 1;
       }
     }
   });
-  console.log(tasks_Completed);
+  console.log(tasks);
 });
